@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %} Books {% endblock %}
+{% block js %} 
+  <script src={{url_for('static', filename='JS/viewBooks.js' )}}></script>
+{% endblock %}
+
+{% block body %} 
+
+<h1>Books</h1>
+
+
+    
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Books Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">ISBN</th>
+            <th scope="col">ISBN13</th>
+            <th scope="col">Number of Pages</th>
+            <th scope="col">Publication Date</th>
+            <th scope="col">Publisher</th>
+            <th scope="col">Language Code</th>
+            <th scope="col">Total Books</th>
+            <th scope="col">Available Books</th>
+            <th scope="col">Times Issued</th>
+
+
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in books%}
+            <tr>
+             <th scope="row">{{i.book_id}}</th>
+             <td>{{i.title}}</td>
+             <td>{{i.author}}</td>
+             <td>{{i.isbn}}</td>
+             <td>{{i.isbn13}}</td>
+             <td>{{i.number_of_pages}}</td>
+             <td>{{i.publication_date}}</td>
+             <td>{{i.publisher}}</td>
+             <td>{{i.language_code}}</td>
+             <td>{{i.total_book_count}}</td>
+             <td>{{i.available_book_count}}</td>
+             <td>{{i.no_of_times_issued}}</td>
+
+
+             <td><a href="/editBook/{{i.book_id}}" class="btn btn-warning"><i class="fas fa-edit"></i></a></td>
+             <td><a href="/deleteBook/{{i.book_id}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>
+            </tr>
+            
+            {% endfor %}
+         
+        </tbody>
+      </table>
+
+
+
+{% endblock %}

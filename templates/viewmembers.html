@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block css%} 
+  <link rel="stylesheet" href={{url_for('static', filename='viewMembers.css' )}}>
+{% endblock %}
+
+{% block js %} 
+  <script src={{url_for('static', filename='JS/viewMembers.js' )}}></script>
+{% endblock %}
+{% block title %} Members {% endblock %}
+
+
+{% block body %} 
+<div class="main_div">
+<h1 class="main_heading">Members</h1>
+<a class="btn btn-success add_member_btn" href="/addMember"><i class="fas fa-user-plus"></i></a>
+</div>
+
+
+    
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th class="table_row_" scope="col">Member Id</th>
+            <th class="table_row_" scope="col">First Name</th>
+            <th class="table_row_" scope="col">Last Name</th>
+            <th class="table_row_" scope="col">Phone Number</th>
+            <th class="table_row_" scope="col">Books Issued</th>
+            <th class="table_row_" scope="col">Debt</th>
+            <th class="table_row_" scope="col">Total Fees Paid</th>
+
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in member%}
+            <tr class="table_value_">
+             <th class="member_id" scope="row" value="{{i.member_id}}">{{i.member_id}}</th>
+             <td class="f_name_">{{i.first_name}}</td>
+             <td class="l_name">{{i.last_name}}</td>
+             <td class="p_no">{{i.phone_number}}</td>
+             <td class="_n_o_b_i">{{i.no_of_books_issued}}</td>
+             <td class="late_fee">{{i.late_fee}}</td>
+             <td class="total_fee">{{i.total_fees_paid}}</td>
+             <td ><a href="/editMember/{{i.member_id}}" class="btn btn-warning"><i class="fas fa-user-edit"></i></a></td>
+             <td ><a href="/issueBook/{{i.member_id}}" class="btn btn-success">Issue Book</a></td>
+             <td ><a href="/memberIssuedBooks/{{i.member_id}}" class="btn btn-info">Issued Books</a></td>   
+             <td ><a href="/deleteMember/{{i.member_id}}" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a></td>   
+
+            </tr>
+            
+            {% endfor %}
+         
+        </tbody>
+      </table>
+
+
+
+{% endblock %}

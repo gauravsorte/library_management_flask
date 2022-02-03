@@ -1,0 +1,82 @@
+
+{% extends 'base.html' %}
+{% block title %} Add Book {% endblock %}
+{% block css %} 
+<link rel="stylesheet" href={{url_for('static', filename='addBook.css' )}}>
+{% endblock%}
+{% block body %} 
+
+<form action='/editBook/{{book.book_id}}', method="POST">
+    <div class="ml-10 mb-3 form-group ">
+      <label for="book_id" class="form-label">Book Id</label>
+      <input type="text" class="form-control" id="book_id" name='bookId' value="{{book.book_id}}">
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div> 
+
+    <div class="mb-3 ml-3 form-group">
+      <label for="title" class="form-label">Title</label>
+      <input type="text" class="form-control" id="title" name='title' value="{{book.title}}">
+    </div>
+
+    <div class="mb-3 ml-3 form-group">
+        <label for="author" class="form-label">Author</label>
+        <input type="text" class="form-control" id="author" name='author' value="{{book.author}}">
+      </div>
+
+    <div class="mb-3 ml-3 form-group">
+      <label for="isbn" class="form-label">ISBN</label>
+      <input type="text" class="form-control" id="isbn" name='isbn' value="{{book.isbn}}">
+      <label for="isbn13" class="form-label right-inline">ISBN13</label>
+      <input type="text" class="form-control" id="isbn13" name='isbn13' value="{{book.isbn13}}">
+    </div>
+
+    <!-- <div class="mb-3 ml-3">
+        <label for="isbn13" class="form-label">ISBN13</label>
+        <input type="text" class="form-control" id="isbn13" name='isbn13'>
+    </div> -->
+<!-- 
+    <div class="mb-3 ml-3">
+        <label for="noPages" class="form-label">Number Of Pages</label>
+        <input type="text" class="form-control" id="noPages" name='noPages'>
+    </div> -->
+
+    <div class="mb-3 form-group">
+      <label for="noPages" class="form-label">Number Of Pages</label>
+      <input type="text" class="form-control" id="noPages" name='noPages' value="{{book.number_of_pages}}">
+        <label for="pub_date" class="form-label">Publication date</label>
+        <input type="text" class="form-control" id="pub_date" name='pub_date' value="{{book.publication_date}}">
+        <label for="publisher" class="form-label">Publisher</label>
+        <input type="text" class="form-control" id="publisher" name='publisher' value="{{book.publisher}}">
+    </div>
+
+    <!-- <div class="mb-3 ml-3">
+        <label for="publisher" class="form-label">Publisher</label>
+        <input type="text" class="form-control" id="publisher" name='publisher'>
+    </div> -->
+
+    <div class="mb-3 ml-3 form-group">
+        <label for="language_code" class="form-label">Language Code</label>
+        <input type="text" class="form-control" id="language_code" name='language_code' value="{{book.language_code}}">
+
+        <label for="total_quantity" class="form-label">Total Quantity</label>
+        <input type="text" class="form-control" id="total_quantity" name='total_quantity' value="{{book.total_book_count}}">
+
+        <label for="available_quantity" class="form-label">Available Quantity</label>
+        <input type="text" class="form-control" id="available_quantity" name='available_quantity' value="{{book.available_book_count}}">
+    </div>
+
+    <!-- <div class="mb-3 ml-3">
+        <label for="total_quantity" class="form-label">Total Quantity</label>
+        <input type="text" class="form-control" id="total_quantity" name='total_quantity'>
+    </div>
+
+    <div class="mb-3 ml-3">
+        <label for="available_quantity" class="form-label">Available Quantity</label>
+        <input type="text" class="form-control" id="available_quantity" name='available_quantity'>
+    </div> -->
+    
+    <button type="submit" class="btn btn-primary add_book_submit_btn">Edit Book</button>
+    <!-- <a href="/addMember" class="btn btn-primary">Submit</a> -->
+  </form>
+
+{% endblock %}

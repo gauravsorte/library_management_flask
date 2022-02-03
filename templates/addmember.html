@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block css %} 
+    <link rel="stylesheet" href={{url_for('static', filename='addMember.css' )}}>
+{% endblock%}
+{% block title %} Add Member {% endblock %}
+
+
+{% block body %} 
+
+<form action='/addMember', method="POST" class="add_member_form">
+    <!-- <div class="mb-3">
+      <label for="member_id" class="form-label">Member Id</label>
+      <input type="text" class="form-control" id="member_id" name='memberId' >
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    <!-- </div> -->
+
+    <div class="mb-3 form-group">
+      <label for="first_name" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="first_name" name='firstName'>
+      <label for="last_name" class="form-label right-inline">Last Name</label>
+        <input type="text" class="form-control" id="last_name" name='lastName'>
+    </div>
+
+    <!-- <div class="mb-3 form-group">
+        <label for="last_name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="last_name" name='lastName'>
+      </div> -->
+
+    <div class="mb-3 form-group">
+      <label for="phone_number" class="form-label">Phone Number</label>
+      <input type="text" class="form-control" id="phone_number" name='phoneNumber'>
+    </div>
+    
+    <button type="submit " class="btn btn-primary add_member_submit_button">Add Member</button>
+    <!-- <a href="/addMember" class="btn btn-primary">Submit</a> -->
+  </form>
+
+{% endblock %}

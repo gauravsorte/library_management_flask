@@ -1,0 +1,75 @@
+.container{
+    display: inline-grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    grid-row-gap: 50px;
+
+    margin-top: 20px;
+    align-content: center;
+    max-width: 1800px !important;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    width: 400px !important;
+    height: 200px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.card-title{
+    position: absolute;
+    top: 30%;
+    right: 0;
+}
+
+.card_button{
+    position: absolute;
+    top: 75%;
+    right: 0;
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
+.fas{
+    font-size: 100px;
+    align-self: center;
+    left: 10%;
+    opacity: 0.6;
+    
+}
+
+.card-title{
+    font-size: 25px;
+}
+
+.card1{
+    background-color: aqua;
+}
+
+.card2{
+    background-color: rgb(163, 248, 114);
+}
+
+.card3{
+    background-color: rgb(195, 117, 240);
+}
+
+.card4{
+    background-color: rgb(240, 95, 115);
+}
+
+.card5{
+    background-color: rgb(241, 208, 135);
+}
+
+.card6{
+    background-color: rgb(182, 179, 231);
+}
+
+.card7{
+    background-color: rgb(226, 236, 81);
+}

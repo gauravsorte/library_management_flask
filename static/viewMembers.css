@@ -1,0 +1,32 @@
+.main_div{
+    display: grid;
+    grid-template-columns: 7fr 0.5fr ;
+    
+}
+
+table{
+    margin-right: 20px;
+}
+
+.add_member_btn{
+   position: absolute;
+   /* align-items: center; */
+
+   width: 45px;
+   height: 45px;
+   margin: 0;
+   padding: 0;
+   left: 92%;
+   top: 19%;
+}
+
+.fa-user-plus{
+   position: absolute;
+   top: 30%;
+   right: -20%;
+}
+
+.main_heading{
+    width: 40%;
+}
+

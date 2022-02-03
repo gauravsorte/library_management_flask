@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %} Reports {% endblock %}
+
+
+{% block body %} 
+
+<h1>Most Popular Books </h1>
+
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Book ID</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Times Issued </th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+             <th scope="row">{{book.book_id}}</th>
+             <td>{{book.title}}</td>
+             <td>{{book.no_of_times_issued}}</td>
+            </tr>
+         
+        </tbody>
+    </table>
+
+    <h1>Highest Fees Paid Member </h1>
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Member ID</th>
+            <th scope="col">Member Name</th>
+            <th scope="col">Total Fees Paid</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+             <th scope="row">{{member.member_id}}</th>
+             <td>{{member.first_name}} {{member.last_name}}</td>
+             <td>{{member.total_fees_paid}}</td>
+            </tr>
+         
+        </tbody>
+    </table>
+
+
+{% endblock %}

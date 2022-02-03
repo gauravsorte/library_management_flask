@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %} Add Member {% endblock %}
+
+
+{% block body %} 
+
+<form action='/editMember/{{member.member_id}}', method="POST">
+    <div class="mb-3">
+      <label for="member_id" class="form-label">Member Id</label>
+      <input type="text" class="form-control" id="member_id" name='memberId' value="{{member.member_id}}" disabled>
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+
+    <div class="mb-3">
+      <label for="first_name" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="first_name" name='firstName' value="{{member.first_name}}">
+    </div>
+
+    <div class="mb-3">
+        <label for="last_name" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="last_name" name='lastName' value="{{member.last_name}}">
+      </div>
+
+    <div class="mb-3">
+      <label for="phone_number" class="form-label">Phone Number</label>
+      <input type="text" class="form-control" id="phone_number" name='phoneNumber' value="{{member.phone_number}}">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <!-- <a href="/addMember" class="btn btn-primary">Submit</a> -->
+  </form>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %} Members {% endblock %}
+
+
+{% block body %} 
+
+<h1>Issued Books Details Are</h1>
+
+
+    
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Issue ID</th>
+            <th scope="col">Member ID</th>
+            <th scope="col">Member Name</th>
+            <th scope="col">Books ID</th>
+            <th scope="col">Issue Date</th>
+            <th scope="col">Issue Time</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% set j = 0 %}
+            {% for i in range(0, len_)%}
+            <tr>
+             <th scope="row">{{issued_books[i].issue_id}}</th>
+             <td>{{issued_books[i].member_id}}</td>
+             <td>{{members[i]}}</td>
+             <td>{{issued_books[i].book_id}}</td>
+             <td>{{issued_books[i].issue_date}}</td>
+             <td>{{issued_books[i].issue_time}}</td>
+             
+             <td><button class="btn btn-danger">Return Book</button></td>
+            
+            </tr>
+            {% set j = j + 1 %}
+            {% endfor %}
+         
+        </tbody>
+      </table>
+
+
+
+{% endblock %}

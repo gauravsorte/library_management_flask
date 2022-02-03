@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block title %} Main Page {% endblock %}
+{% block css %} 
+    <link rel="stylesheet" href={{url_for('static', filename='mainPage.css' )}}>
+{% endblock%}
+{% block body %} 
+
+<!-- <h1>Main Page</h1> -->
+<!-- <a href="/addMember" class="btn btn-primary">Add Member</a>
+<a href="/viewMembers" class="btn btn-primary"> View Members</a>
+<a href="/addBook" class="btn btn-primary">Add Book</a>
+<a href="/viewBooks" class="btn btn-primary">View Books</a>
+<a href="/issuedBooks" class="btn btn-primary">Issued Books</a> -->
+
+<div class="container">
+
+<div class="card card1" style="width: 18rem;">
+    <i class="fas fa-user-plus"></i>
+    <div class="card-body">
+      <h5 class="card-title">Add Member</h5>
+      <a href="/addMember" class="btn btn-primary card_button">Add Member</a>
+    </div>
+  </div>
+
+  <div class="card card2" style="width: 18rem;">
+    <i class="fas fa-users"></i>
+    <div class="card-body">
+      <h5 class="card-title">View Members</h5>
+      <a href="/viewMembers" class="btn btn-primary card_button">View Members</a>
+    </div>
+  </div>
+
+  <div class="card card3" style="width: 18rem;">
+    <i class="fas fa-book"></i>
+    <div class="card-body">
+      <h5 class="card-title">Add Book</h5>
+      <a href="/addBook" class="btn btn-primary card_button">Add Book</a>
+    </div>
+  </div>
+
+  <div class="card card4" style="width: 18rem;">
+    
+    <i class="fas fa-book-open"></i>
+    <div class="card-body">
+      <h5 class="card-title">View Books</h5>
+      <a href="/viewBooks" class="btn btn-primary card_button">View Books</a>
+    </div>
+  </div>
+
+  <div class="card card5" style="width: 18rem;">
+    <i class="fas fa-book-reader"></i>
+    <div class="card-body">
+      <h5 class="card-title">Issued Books</h5>
+      <a href="/issuedBooks" class="btn btn-primary card_button">Issued Books</a>
+    </div>
+  </div>
+
+
+  <div class="card card6" style="width: 18rem;">
+    <i class="fas fa-file-word"></i>
+    <div class="card-body">
+      <h5 class="card-title">Reports</h5>
+      <a href="/reports_" class="btn btn-primary card_button">View Reports</a>
+    </div>
+  </div>
+
+  <div class="card card7" style="width: 18rem;">
+    <i class="fas fa-file-alt"></i>
+    <div class="card-body">
+      <h5 class="card-title">Transactions</h5>
+      <a href="/transactions" class="btn btn-primary card_button">View Transactions</a>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+

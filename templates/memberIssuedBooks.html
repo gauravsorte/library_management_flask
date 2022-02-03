@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %} Members {% endblock %}
+
+
+{% block body %} 
+
+<h1>Issued Books </h1>
+
+
+    
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Issue ID</th>
+            <th scope="col">Member ID</th>
+            <th scope="col">Books ID</th>
+            <th scope="col">Issue Date</th>
+            <th scope="col">Issue Time</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+            {% for i in books%}
+            <tr>
+             <th scope="row">{{i.issue_id}}</th>
+             <td>{{i.member_id}}</td>
+             <td>{{i.book_id}}</td>
+             <td>{{i.issue_date}}</td>
+             <td>{{i.issue_time}}</td>
+             
+             <td><a href="/returnBookDetails/{{i.issue_id}}/{{i.member_id}}/{{i.book_id}}" class="btn btn-danger">Return Book</a></td>
+
+            </tr>
+            
+            {% endfor %}
+         
+        </tbody>
+      </table>
+
+
+
+{% endblock %}

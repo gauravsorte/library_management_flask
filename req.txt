@@ -1,0 +1,72 @@
+1> register member
+2> crud on books, members
+3> if member is registered only then he can issue book
+4> if member has issued book then only he can return book
+5> if returned book later than return date then late fee is appliced
+
+
+
+
+
+Tables :
+	Members:-
+		member_id
+		f_name
+		l_name
+		phone_number
+		no_of_books_issued
+		late_fee
+		
+	Issued Book:
+		issued_id
+		member_id
+		book_id
+		issue_date
+		issue_time
+		return_date
+		
+	librian:
+		libraian_id
+		f_name
+		l_name
+		
+	Books:
+		book_id
+		title
+		author
+		avg_rating
+		isbn
+		isbn13
+		num_pages
+		publication_date
+		publisher
+		language_code
+		total_count
+		available_count
+		
+	Transaction:
+		transaction_id
+		book_id
+		member_id
+		issued_or_returned
+		total_quantity
+		transation_date
+		transction_time
+		
+		
+		
+		book_id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(45), nullable=False)
+    author = db.Column(db.String(45), nullable=False)
+    average_rating = db.Column(db.String(45))
+    isbn = db.Column(db.Integer)
+    isbn13 = db.Column(db.Integer)
+    number_of_pages = db.Column(db.Integer)
+    publication_date = db.Column(db.String(45))
+    publisher = db.Column(db.String(45))
+    language_code = db.Column(db.String(45))
+    total_book_count = db.Column(db.Integer, nullable=False)
+    available_book_count = db.Column(db.Integer, nullable=False)
+		
+		
+		

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %} Books {% endblock %}
+
+{% block js %}
+  <script src="{{url_for('static', filename='JS/returnBook.js')}}"></script>
+{% endblock %}
+{% block body %} 
+
+<h1>Return Book Details are :- </h1>
+
+
+    
+
+    <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Issue Id</th>
+            <th scope="col">Member Id</th>
+            <th scope="col">Member Name</th>
+            <th scope="col">Book Id </th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Issue Date</th>
+            <th scope="col">Total Fees</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td class="issued_book_id">{{issued_book.issue_id}}</td>
+                <td>{{member.member_id}}</td>
+                <td>{{member.first_name}} {{member.last_name}}</td>
+                <td>{{book.book_id}}</td>
+                <td>{{book.title}}</td>
+                <td>{{issued_book.issue_date}}</td>
+
+                <td class="total_amount">{{fees}}</td>
+                <!-- <td>100</td> -->
+
+            </tr>
+         
+        </tbody>
+      </table>
+
+      <form action='/returnBook/{{issued_book.issue_id}}/{{member.member_id}}/{{book.book_id}}/{{fees}}' , method="POST">
+        <div class="ml-10 mb-3 ">
+          <label for="amount_paid" class="form-label" > Amount Paid</label>
+          <input type="text" class="form-control amount_paid_"  id="amount_paid" name='amount_paid' onchange="check_disabled()">
+          <span class="debt_msg hidden">Debt Value must be less than 500 </span>
+        </div>
+      
+      <button type="submit"  class="btn btn-danger" id="return_book_btn" >Return Book</button>
+
+      </form>
+
+
+
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %} Add Book {% endblock %}
+
+
+{% block body %}
+
+<form action='/issueBook/{{member.member_id}}' , method="POST">
+    <div class="ml-10 mb-3 ">
+        <label for="member_id" class="form-label">Member Id</label>
+        <input type="text" class="form-control" id="member_id" name='member_id' value="{{member.member_id}}" disabled>
+    </div>
+
+    <div class="ml-10 mb-3 ">
+        <label for="member_id" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="member_id" name='member_id' value="{{member.first_name}}" disabled>
+    </div>
+
+    <div class="ml-10 mb-3 ">
+        <label for="member_id" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="member_id" name='member_id' value="{{member.last_name}}" disabled>
+    </div>
+
+    <div class="ml-10 mb-3 ">
+        <label for="issue_book">Choose a Book For Issue:</label>
+        <select id="issue_book" name="selected_book_id">
+            <option >Choose a Book</option>
+            {% for i in books %}
+            <option value="{{i.book_id}}">{{i.book_id}} - {{i.title}} - {{i.language_code}}</option>
+            {% endfor %}
+
+        </select>
+    </div>
+
+
+
+
+    <button type="submit" class="btn btn-primary">Issue Book</button>
+    <!-- <a href="/addMember" class="btn btn-primary">Submit</a> -->
+</form>
+
+{% endblock %}
