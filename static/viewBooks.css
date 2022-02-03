@@ -1,0 +1,5 @@
+.main_div{
+    display: grid;
+    grid-template-columns: 7fr 0.5fr ;
+    margin-bottom: 10px;
+}

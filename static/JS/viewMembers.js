@@ -117,11 +117,19 @@ function filter_by(selected_filter, value){
 
 function filter() {
     let serarch_filter_val = document.getElementById('search_filter').value
-    console.log('in func');
-    let search_text = document.getElementById('search_input').value
-    console.log('>>>> ',serarch_filter_val);
-    console.log('>>>>>>>>>', search_text);
-    filter_by(serarch_filter_val, search_text)
+    if(!serarch_filter_val){
+        console.log('TRUE');
+        let table_rows = document.querySelectorAll('.table_value_')
+        for (let index = 0; index < table_rows.length; index++){
+            table_rows[index].classList.remove('hidden')
+        }
+    } else {
+        console.log(serarch_filter_val);
+        let search_text = document.getElementById('search_input').value
+        console.log('>>>> ',serarch_filter_val);
+        filter_by(serarch_filter_val, search_text)
+    }
+    
 }
 console.log('hi there');
 

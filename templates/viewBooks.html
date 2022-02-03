@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 {% block title %} Books {% endblock %}
+{% block css %} 
+<link rel="stylesheet" href={{url_for('static', filename='viewBooks.css' )}}>
+
+{% endblock %}
 {% block js %} 
   <script src={{url_for('static', filename='JS/viewBooks.js' )}}></script>
 {% endblock %}
 
 {% block body %} 
 
-<h1>Books</h1>
+<div class="main_div">
+  <h1 class="main_heading">Members</h1>
+  <a href="/addBook"><img src="{{url_for('static', filename='images/book.png' )}}" alt="" srcset=""/></a>
+</div>
 
 
     
